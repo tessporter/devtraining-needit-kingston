@@ -30,24 +30,20 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	
-	//right now stores the current time
-	var rightnow = new GlideDateTime();
-	//GlideDateTime obj for When needed date
-	var whenNeeded = new GlideDateTime(current.u_when_needed);
+	//Instantiate the NeedItUtils class. Call the isDatePast method and pass the u_when_needed value
+	var niutils = new NeedItUtils();
+	var isPast = niutils.isDatePast(current.u_when_needed);
 	
-	//if whenNeeded before rightnow, do not write the redord to the database and output an error message to the screen
-	//Use getLocalDate() so that two error messages don't pop up for the past and same day
-	if (whenNeeded.getLocalDate().before(rightnow.getLocalDate())) {
+	//If isDatePast returns true, the date is in the past
+	if (isPast == true) {
 		gs.addErrorMessage("When needed date cannot be in the past. Your request has not been saved to the database.");
 		current.setAbortAction(true);
 	}
 	
-	//Get the date portion of rightnow and whenNeeded
-	var today = rightnow.getLocalDate();
-	var due = whenNeeded.getLocalDate();
+	var isToday = niutils.isDateToday(current.u_when_needed);
 	
-	//Compare today and due to see if they are the same day
-	if (today.compareTo(due) == 0) {
+	//If the isDateToday returns true the when date is today
+	if (isToday == true) {
 		gs.addErrorMessage("You cannot submit NeedIt requests for today.");
 		current.setAbortAction(true);
 	}
@@ -59,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5fa4ecfbdbb023002aff112039961913</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>NeedIt When needed field date</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -67,7 +63,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_5fa4ecfbdbb023002aff112039961913</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-03 19:56:03</sys_updated_on>
+        <sys_updated_on>2018-10-04 14:13:49</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
