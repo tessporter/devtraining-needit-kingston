@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_action_instance">
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Days Ago Date">afd6814adb0123002aff1120399619b8</action_type>
+        <comment>Get overdue date using property value.</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Find and Close Long Overdue NeedIt Tasks">32a8c58adb0123002aff11203996193d</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-10 22:18:58</sys_created_on>
+        <sys_id>b90c850edb0123002aff1120399619ad</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_hub_action_instance_b90c850edb0123002aff1120399619ad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-10 22:20:49</sys_updated_on>
+        <ui_id>c1978c3e-c689-442d-81a3-2ec0cbd7d527</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b90c850edb0123002aff1120399619ad"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b90c850edb0123002aff1120399619ad</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-10 22:18:58</sys_created_on>
+        <sys_id>350c850edb0123002aff1120399619b0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-10 22:18:58</sys_updated_on>
+        <value/>
+        <variable display_value="">2fd6c54adb0123002aff11203996198a</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=b90c850edb0123002aff1120399619ad"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_days_ago</field>
+        <id>b90c850edb0123002aff1120399619ad</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-10 22:18:58</sys_created_on>
+        <sys_id>b10c850edb0123002aff1120399619b0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-10 22:18:58</sys_updated_on>
+        <table>var__m_sys_hub_action_input_afd6814adb0123002aff1120399619b8</table>
+        <value>{{d91cc49a-b634-422a-add2-3da0839c6f9e.property_value}}</value>
+    </sys_element_mapping>
+</record_update>
